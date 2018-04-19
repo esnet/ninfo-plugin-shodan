@@ -10,8 +10,8 @@ class shodan_plug(PluginBase):
     remote = False
 
     def setup(self):
-        from shodan import WebAPI
-        self.api = WebAPI(self.plugin_config["api_key"])
+        from shodan import Shodan
+        self.api = Shodan(self.plugin_config["api_key"])
 
     def get_info(self, arg):
         info = self.api.host(arg)
